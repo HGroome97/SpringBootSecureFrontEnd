@@ -22,10 +22,16 @@
               <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/trainee/CV">My CV's</a>
+              <a class="nav-link" href="/trainee/account">My Account</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="trainee/account">My Account</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My CV's
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/trainee/CV/viewcvs">View</a>
+                <a class="dropdown-item" href="/trainee/CV/addcvs">Add</a>
+              </div>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -87,7 +93,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/trainingmanager/CV">CVs</a>
-            <li class="nav-item dropdown">
+            </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Trainees

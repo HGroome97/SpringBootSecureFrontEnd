@@ -21,29 +21,15 @@
           <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/adminpage">My Account</a>
+          <a class="nav-link" href="/trainee/account">My Account</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/CV">CV's</a>
-        <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Trainees
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/trainingmanager/trainees/viewtrainees">View</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/addtrainees">Add</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
-            </div>
-          </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trainers
+            My CV's
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/trainingmanager/trainers/viewtrainers">View</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/addtrainers">Add</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/edittrainers">Amend</a>
+            <a class="dropdown-item" href="/trainee/CV/viewcvs">View</a>
+            <a class="dropdown-item" href="/trainee/CV/addcvs">Add</a>
           </div>
         </li>
       </ul>
@@ -60,41 +46,40 @@
 		</c:if>
 		<form onsubmit="return false;" method="post">
 			<div class="form-group">
-				<label for="username">Username:</label>
+				<label for="filename">Save name:</label>
         <input type="text" class="form-control" id="username" name="username">
 			</div>
 			<div class="form-group">
-				<label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd" name="password">
+				<input type="button"  class="btn btn-primary" onclick="download();" value="Choose file"/>
+        <label for="username"></label>
 			</div>
-
 			<button type="submit" class="btn btn-success"  onclick="register()">Add</button>
 		</form>
     <script>
-      register = function() {
-        var xhr = new XMLHttpRequest();
-        var url = "http://localhost:8081/users/createUser";
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log(xhr.responseText);
-        }
-        };
-        var username = document.getElementById('username').value;
-        var pwd = document.getElementById('pwd').value;
-
-        var data = JSON.stringify({
-	         "username":username,
-	         "password":pwd,
-	         "enabled":true,
-	         "role":"ROLE_TRAINER"
-        });
-        xhr.send(data);
-        document.getElementById('username').value="";
-        document.getElementById('pwd').value="";
-        alert("Successfully added!")
-      }
+      // register = function() {
+      //   var xhr = new XMLHttpRequest();
+      //   var url = "http://localhost:8081/users/createUser";
+      //   xhr.open("POST", url, true);
+      //   xhr.setRequestHeader("Content-Type", "application/json");
+      //   xhr.onreadystatechange = function () {
+      //   if (xhr.readyState === 4 && xhr.status === 200) {
+      //     console.log(xhr.responseText);
+      //   }
+      //   };
+      //   var username = document.getElementById('username').value;
+      //   var pwd = document.getElementById('pwd').value;
+      //
+      //   var data = JSON.stringify({
+	    //      "username":username,
+	    //      "password":pwd,
+	    //      "enabled":true,
+	    //      "role":"ROLE_TRAINER"
+      //   });
+      //   xhr.send(data);
+      //   document.getElementById('username').value="";
+      //   document.getElementById('pwd').value="";
+      //   alert("Successfully added!")
+      // }
     </script>
 	</div>
 

@@ -56,7 +56,7 @@
   </nav>
   <div align="center" id="wrapper">
           <h4>Trainees</h4>
-          <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+          <table align='center' class="table table-striped" cellspacing=2 cellpadding=5 id="data_table" border=1>
               <tr>
                   <th>Username</th>
                   <th>Name</th>
@@ -65,15 +65,15 @@
               <tr>
                   <td><input type="text" id="id" disabled></td>
                   <td><input type="text" id="title" disabled></td>
-                  <td><input type="button" class="add" onclick="delete();" value="Delete Trainer"></td>
+                  <td><input type="button" class="btn btn-danger" onclick="delete();" value="Delete Trainer"></td>
               </tr>
 
           </table>
 
           <br>
-          <a href="addtrainees"><button>Add Trainee</button></a>
+          <a href="addtrainees"><button class="btn btn-success">Add Trainee</button></a>
           &nbsp;&nbsp;
-          <input type="button" onclick="listAllMovies()" value="List all trainees" />
+          <input type="button" class="btn btn-success" onclick="listAllMovies()" value="List all trainees" />
       </div>
 
     <script type="text/javascript">

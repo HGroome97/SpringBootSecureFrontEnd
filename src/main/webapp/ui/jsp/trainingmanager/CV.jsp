@@ -54,12 +54,11 @@
       </ul>
     </div>
   </nav>
-    Admin view all cvs
 
 
     <div align="center" id="wrapper">
             <h4>Trainee CV's</h4>
-            <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+            <table align='center' class="table table-striped" cellspacing=2 cellpadding=5 id="data_table" border=1>
                 <tr>
                     <th>Trainee</th>
                     <th>File</th>
@@ -68,7 +67,7 @@
                 <tr>
                     <td><input type="text" id="trainee" disabled></td>
                     <td><input type="text" id="filename" disabled></td>
-                    <td><input type="button" class="add" onclick="download();" value="Download"></td>
+                    <td><input type="button"  class="btn btn-primary" onclick="download();" value="Download"></td>
                 </tr>
             </table>
 

@@ -21,29 +21,15 @@
           <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/adminpage">My Account</a>
+          <a class="nav-link" href="/trainee/account">My Account</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/CV">CV's</a>
-        <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Trainees
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/trainingmanager/trainees/viewtrainees">View</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/addtrainees">Add</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
-            </div>
-          </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trainers
+            My CV's
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/trainingmanager/trainers/viewtrainers">View</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/addtrainers">Add</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/edittrainers">Amend</a>
+            <a class="dropdown-item" href="/trainee/CV/viewcvs">View</a>
+            <a class="dropdown-item" href="/trainee/CV/addcvs">Add</a>
           </div>
         </li>
       </ul>
@@ -55,25 +41,25 @@
     </div>
   </nav>
     <div align="center" id="wrapper">
-            <h4>Trainers</h4>
+            <h4>My CVs</h4>
             <table align='center' class="table table-striped" cellspacing=2 cellpadding=5 id="data_table" border=1>
                 <tr>
-                    <th>Username</th>
+                    <th>File</th>
                     <th>Name</th>
                     <th>Delete</th>
                 </tr>
                 <tr>
                     <td><input type="text" id="id" disabled></td>
                     <td><input type="text" id="title" disabled></td>
-                    <td><input type="button" class="btn btn-danger" onclick="delete()" value="Delete Trainer"></td>
+                    <td><input type="button" class="btn btn-danger" onclick="delete()" value="Delete CV"></td>
                 </tr>
 
             </table>
 
             <br>
-            <a href="addtrainers"><button class="btn btn-success">Add Trainer</button></a>
+              <a href="addcvs"><button class="btn btn-success">Add CV</button></a>
             &nbsp;&nbsp;
-            <input type="button" class="btn btn-success" onclick="listAllMovies()" value="List all trainers" />
+            <input type="button" class="btn btn-success" onclick="listAllMovies()" value="List all CVs" />
         </div>
 
 
