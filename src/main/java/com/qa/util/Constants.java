@@ -18,6 +18,8 @@ public class Constants {
 	
 	//URL ENDPOINTS
 	public static final String LOGIN_URL = "/login";
+	public static final String LOGIN_ERROR_URL = "/login?error=true";
+	
 	public static final String REGISTER_URL = "/register";
 	public static final String HOMEPAGE_URL = "/homepage";
    
@@ -50,6 +52,7 @@ public class Constants {
 	public static final String PERFORM_LOGOUT = "/perform_logout";
 	
 	//JDBC
+	public static final String JDBC_DRIVER_NAME = "com.mysql.jdbc.Driver";	
 	public static final String JDBC_URL = "jdbc:mysql://localhost:3306/userbd";
 	public static final String JDBC_USERNAME = "root";
 	public static final String JDBC_PASSWORD = "password";

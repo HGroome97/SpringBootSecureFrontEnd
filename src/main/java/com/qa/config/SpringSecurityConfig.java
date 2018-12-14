@@ -51,7 +51,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         	.loginPage(Constants.LOGIN_URL).permitAll()
         	.loginProcessingUrl(Constants.PERFORM_LOGIN)
         	.defaultSuccessUrl(Constants.HOMEPAGE_URL,true)
-        	.failureUrl("/login?error=true")
+        	.failureUrl(Constants.LOGIN_ERROR_URL)
         .and()
         	.logout()
         	.logoutUrl(Constants.PERFORM_LOGOUT)

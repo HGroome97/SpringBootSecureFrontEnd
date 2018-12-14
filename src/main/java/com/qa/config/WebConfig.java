@@ -67,7 +67,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean(name = "dataSource")
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        driverManagerDataSource.setDriverClassName(Constants.JDBC_DRIVER_NAME);
         driverManagerDataSource.setUrl(Constants.JDBC_URL);
         driverManagerDataSource.setUsername(Constants.JDBC_USERNAME);
         driverManagerDataSource.setPassword(Constants.JDBC_PASSWORD);
