@@ -13,6 +13,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+import com.qa.util.Constants;
+
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -39,26 +41,24 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http
         .csrf().disable()
         .authorizeRequests()
-        	//.antMatchers("/register").permitAll()
-        	.antMatchers("/trainingmanager/**").access("hasRole('ROLE_TRAINING_MANAGER')")
-        	.antMatchers("/trainer/**").access("hasRole('ROLE_TRAINER')")
-        	.antMatchers("/trainee/**").access("hasRole('ROLE_TRAINEE')")
-        	
-        	.antMatchers("/register").anonymous()
+        	.antMatchers(Constants.TRAININGMANAGER_ACCESS_URL).access(Constants.TRAINING_MANAGER_HAS_ROLE)
+        	.antMatchers(Constants.TRAINER_ACCESS_URL).access(Constants.TRAINEE_HAS_ROLE)
+        	.antMatchers(Constants.TRAINEE_ACCESS_URL).access(Constants.TRAINEE_HAS_ROLE)
+        	.antMatchers(Constants.REGISTER_URL).anonymous()
         	.anyRequest().authenticated()
         .and()
         	.formLogin()
-        	.loginPage("/login").permitAll()
-        	.loginProcessingUrl("/perform_login")
-        	.defaultSuccessUrl("/homepage",true)
+        	.loginPage(Constants.LOGIN_URL).permitAll()
+        	.loginProcessingUrl(Constants.PERFORM_LOGIN)
+        	.defaultSuccessUrl(Constants.HOMEPAGE_URL,true)
         	.failureUrl("/login?error=true")
         .and()
         	.logout()
-        	.logoutUrl("/perform_logout")
+        	.logoutUrl(Constants.PERFORM_LOGOUT)
         	.deleteCookies("JSESSIONID")
         .and()
     		.exceptionHandling()
-    		.accessDeniedPage("/accessDenied");
+    		.accessDeniedPage(Constants.ACCESS_DENIED_URL);
     }
 
 	@Override

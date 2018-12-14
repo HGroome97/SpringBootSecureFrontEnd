@@ -10,8 +10,11 @@ public class Constants {
 	
 	//ROLES
 	public static final String TRAINING_MANAGER_ROLE = "ROLE_TRAINING_MANAGER";
+	public static final String TRAINING_MANAGER_HAS_ROLE = "hasRole('ROLE_TRAINING_MANAGER')";
 	public static final String TRAINER_ROLE = "ROLE_TRAINER";
+	public static final String TRAINER_HAS_ROLE = "hasRole('ROLE_TRAINER')";
 	public static final String TRAINEE_ROLE = "ROLE_TRAINEE";
+	public static final String TRAINEE_HAS_ROLE = "hasRole('ROLE_TRAINEE')";
 	
 	//URL ENDPOINTS
 	public static final String LOGIN_URL = "/login";
@@ -36,7 +39,15 @@ public class Constants {
 	public static final String TRAINEE_CV_VIEWCVS_URL = "/trainee/CV/viewcvs";
     
 	public static final String ACCESS_DENIED_URL = "/accessDenied";
-
+	
+	public static final String TRAININGMANAGER_ACCESS_URL ="/trainingmanager/**";
+	public static final String TRAINER_ACCESS_URL = "/trainer/**";
+	public static final String TRAINEE_ACCESS_URL = "/trainee/**";
+	
+	
+	//LOGIN FUNCTIONS
+	public static final String PERFORM_LOGIN = "/perform_login";
+	public static final String PERFORM_LOGOUT = "/perform_logout";
 	
 	//JDBC
 	public static final String JDBC_URL = "jdbc:mysql://localhost:3306/userbd";
