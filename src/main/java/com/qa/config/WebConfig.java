@@ -5,12 +5,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import com.qa.util.Constants;
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
@@ -29,32 +30,29 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(final ViewControllerRegistry registry) {
         super.addViewControllers(registry);
-
-        registry.addViewController("/anonymous");
-        registry.addViewController("/login");
-        registry.addViewController("/register");
-        registry.addViewController("/homepage");
+        
+        registry.addViewController(Constants.LOGIN_URL);
+        registry.addViewController(Constants.REGISTER_URL);
+        registry.addViewController(Constants.HOMEPAGE_URL);
        
-        registry.addViewController("/trainingmanager/adminpage");
-        registry.addViewController("/trainingmanager/CV");
-        registry.addViewController("/trainingmanager/trainees/edittrainees");
-        registry.addViewController("/trainingmanager/trainees/addtrainees");
-        registry.addViewController("/trainingmanager/trainees/viewtrainees");
-        registry.addViewController("/trainingmanager/trainers/edittrainers");
-        registry.addViewController("/trainingmanager/trainers/addtrainers");
-        registry.addViewController("/trainingmanager/trainers/viewtrainers");
+        registry.addViewController(Constants.TRAININGMANAGER_ADMINPAGE_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_CV_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINEES_EDITTRAINEES_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINEES_ADDTRAINEES_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINEES_VIEWTRAINEES_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINERS_EDITTRAINERS_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINERS_ADDTRAINERS_URL);
+        registry.addViewController(Constants.TRAININGMANAGER_TRAINERS_VIEWTRAINERS_URL);
         
-        registry.addViewController("/trainer/CV");
-        registry.addViewController("/trainer/viewtrainees");
-        registry.addViewController("/trainer/trainerpage");
+        registry.addViewController(Constants.TRAINER_CV_URL);
+        registry.addViewController(Constants.TRAINER_VIEWTRAINEES_URL);
+        registry.addViewController(Constants.TRAINER_TRAINERPAGE_URL);
         
+        registry.addViewController(Constants.TRAINEE_ACCOUNT_URL);
+        registry.addViewController(Constants.TRAINEE_CV_ADDCVS_URL);  
+        registry.addViewController(Constants.TRAINEE_CV_VIEWCVS_URL);  
         
-        registry.addViewController("/trainee/account");
-        registry.addViewController("/trainee/CV/addcvs");  
-        registry.addViewController("/trainee/CV/viewcvs");  
-        
-        
-        registry.addViewController("/accessDenied");
+        registry.addViewController(Constants.ACCESS_DENIED_URL);
     }
     
     @Bean
@@ -70,13 +68,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
         driverManagerDataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/userbd");
-        driverManagerDataSource.setUsername("root");
-        driverManagerDataSource.setPassword("password");
+        driverManagerDataSource.setUrl(Constants.JDBC_URL);
+        driverManagerDataSource.setUsername(Constants.JDBC_USERNAME);
+        driverManagerDataSource.setPassword(Constants.JDBC_PASSWORD);
         return driverManagerDataSource;
     }
-    
-    
     
     @Bean
 	public PasswordEncoder passwordEncoder(){
